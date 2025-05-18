@@ -4,7 +4,7 @@ Reset des Internet router durch power cycling wenn er sich aufhängt oder bei In
 
 Meine Fritzbox hängt ab und zu und weder Internet noch Wlan funktionieren. 
 Durch Unterbrechen der Stromversorgung funktioniert alles wieder. 
-Um das zu automatisieren habe ich in Homeassistant eine Automatisierung erstellt, die bei Stromausfall den Router über eine an das RasPi Wlan angeschlossene Schaltsteckdose aus- und 10 Sek später wieder einschaltet.
+Um das zu automatisieren habe ich in Homeassistant eine Automatisierung erstellt, die bei Router- oder Internetausfall den Router über eine an das RasPi Wlan angeschlossene Schaltsteckdose aus- und 10 Sek später wieder einschaltet.
 
 Requisiten:
 
@@ -23,7 +23,7 @@ Installation:
 <b>English:</b><br>
 Reset the Internet router by power cycling when it hangs or when the Internet fails
 
-My Fritzbox hangs from time to time and neither the Internet nor Wi-Fi work. By interrupting the power supply, everything works again. To automate this, I have created an automation in Homeassistant that switches the router off via a switch socket connected to the RasPi Wlan in the event of a power failure and switches it on again 10 seconds later.
+My Fritzbox hangs from time to time and neither the Internet nor Wi-Fi work. By interrupting the power supply, everything works again. To automate this, I have created an automation in Homeassistant that switches the router off via a switch socket connected to the RasPi Wlan in the event of a router- or internet failure and switches it on again 10 seconds later.
 
 Props:
 
