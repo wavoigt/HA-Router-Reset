@@ -1,0 +1,41 @@
+# FritzBox Hard Reset wegen Internet Ausfall
+
+alias: FritzBox Internet Down
+description: ""
+triggers:
+  - entity_id:
+      - binary_sensor.8_8_8_8
+    to: "off"
+    trigger: state
+    from: "on"
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+conditions: []
+actions:
+  - type: turn_off
+    # Schaltsteckdose, im visuellen Editor konfigurieren
+    device_id: da44b5d192f832e526ae811c612c2ea1
+    entity_id: 30125932e9b60481aee8d689284cc49b
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
+  - type: turn_on
+    # Schaltsteckdose, im visuellen Editor konfigurieren
+    device_id: da44b5d192f832e526ae811c612c2ea1
+    entity_id: 30125932e9b60481aee8d689284cc49b
+    domain: switch
+  - action: system_log.write
+    data:
+      message: FritzBox Reboot wegen Internet Ausfall
+      level: critical
+  - action: notify.mobile_app_sm_g973f
+    # Nachricht an Smartphone HA App
+    data:
+      message: FritzBox Reboot wegen Internet Ausfall
+      title: Home Assistant
+mode: single
