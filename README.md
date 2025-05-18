@@ -1,6 +1,6 @@
 # HA-Router-Reset
-Home Assistant Router hard reset if hanging<br>
-Reset des Internet router durch power cycling wenn er sich aufhängt oder bei Internet Ausfall
+<b>Home Assistant Router hard reset if hanging<br>
+Reset des Internet router durch power cycling wenn er sich aufhängt oder bei Internet Ausfall</b>
 
 Meine Fritzbox hängt ab und zu und weder Internet noch Wlan funktionieren. 
 Durch Unterbrechen der Stromversorgung funktioniert alles wieder. 
@@ -19,6 +19,25 @@ Installation:
 - HA Integration Ping (ICMP), Adresse einstellen 8.8.8.8
 - AddOn installieren: https://github.com/joaofl/hassio-addons/tree/master/hassio-hotspot und nach Anleitung konfigurieren
 - Schaltsteckdose konfigurieren für das WLan des RasPi
+
+<b>English:</b><br>
+Reset the Internet router by power cycling when it hangs or when the Internet fails
+
+My Fritzbox hangs from time to time and neither the Internet nor Wi-Fi work. By interrupting the power supply, everything works again. To automate this, I have created an automation in Homeassistant that switches the router off via a switch socket connected to the RasPi Wlan in the event of a power failure and switches it on again 10 seconds later.
+
+Props:
+
+- Raspberry Pi
+- wlan0 available or external wifi stick e.g. “Anadol Wifi USB Stick” or similar.
+- Tasmota WLan switching socket NOUS A1T or similar.
+- (instead of wifi, a Zigbee stick with corresponding switch socket would also be conceivable)
+- Home Assistant
+
+Installation:
+
+- HA Integration Ping (ICMP), set address 8.8.8.8
+- Install AddOn: https://github.com/joaofl/hassio-addons/tree/master/hassio-hotspot and configure according to instructions
+- Configure the switch socket for the WLan of the RasPi
 
 Automation:
 
